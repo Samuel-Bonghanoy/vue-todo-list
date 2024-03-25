@@ -1,11 +1,14 @@
 import { createRouter, createWebHashHistory } from "vue-router";
 
-const NowPlayingView = {
+import TaskList from "../components/TaskList.vue";
+
+const TaskListView = {
   path: "/",
   name: "NowPlaying",
+  component: TaskList,
 };
 
-const routes = [];
+const routes = [TaskListView];
 
 // const Routes = {
 //   folder: folder.name,
