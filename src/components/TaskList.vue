@@ -2,13 +2,21 @@
 import { reactive } from "vue";
 import Task from "./Task.vue";
 
-const tasks = reactive(["do this", "do that"]);
+const tasks = reactive({ taskList: ["do this", "do that"] });
+
+console.log(tasks);
+
+const markTaskDone = (task) => {
+  console.log("yes");
+  console.log(tasks);
+  tasks.taskList = tasks.taskList.filter((t) => t !== task);
+};
 </script>
 
 <template>
   <ul>
-    <li v-for="task in tasks" :key="task">
-      <Task :task="task" />
+    <li v-for="task in tasks.taskList" :key="task">
+      <Task :task="task" :finishTask="markTaskDone" />
     </li>
   </ul>
 </template>

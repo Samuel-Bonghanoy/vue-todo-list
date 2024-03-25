@@ -3,6 +3,9 @@ import { CheckCircleIcon } from "@heroicons/vue/24/solid";
 
 defineProps({
   task: String,
+  finishTask: {
+    type: Function,
+  },
 });
 </script>
 
@@ -11,6 +14,7 @@ defineProps({
     class="flex text-slate-800 bg-slate-300 items-center my-2 px-3 py-3 w-full hover:bg-slate-400 hover:scale-[1.03] hover:shadow-slate-400 transition-all rounded-md"
   >
     <button
+      v-on:click="finishTask(task)"
       type="checkbox"
       className="h-9 rounded-full border-1 border-green-900 focus:ring-1 focus:ring-gray-600"
     >
