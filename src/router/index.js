@@ -1,9 +1,8 @@
 import { createRouter, createWebHashHistory } from "vue-router";
 
 const NowPlayingView = {
-  path: "/nowplaying/:tab",
+  path: "/",
   name: "NowPlaying",
-  component: NowPlaying,
 };
 
 const routes = [];
@@ -36,4 +35,4 @@ const router = createRouter({
   routes,
 });
 
-export { router, Routes };
+export default router;
