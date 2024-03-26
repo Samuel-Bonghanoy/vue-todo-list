@@ -7,8 +7,6 @@ const tasks = reactive({ taskList: ["do this", "do that"] });
 console.log(tasks);
 
 const markTaskDone = (task) => {
-  console.log("yes");
-  console.log(tasks);
   tasks.taskList = tasks.taskList.filter((t) => t !== task);
 };
 </script>
