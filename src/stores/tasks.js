@@ -16,8 +16,6 @@ export const useTasksStore = defineStore("tasks", {
     },
     findTaskById(id) {
       const task = this.taskList.find((el) => el.id === parseInt(id));
-      console.log(id, typeof id);
-      console.log(task);
       return task;
     },
   },
