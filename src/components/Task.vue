@@ -22,7 +22,7 @@ defineProps({
     </button>
 
     <div className="flex flex-col">
-      <p className="ml-2 font-semibold text-[1.1rem]">{{ task }}</p>
+      <p className="ml-2 font-semibold text-[1.1rem]">{{ task.task }}</p>
       <p className="ml-2 text-[0.75rem] text-green-800 font-thin">due Monday</p>
     </div>
   </div>

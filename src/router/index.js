@@ -1,14 +1,21 @@
-import { createRouter, createWebHashHistory } from "vue-router";
+import { createRouter, createWebHistory } from "vue-router";
 
 import TaskList from "../components/TaskList.vue";
+import ListItem from "../components/ListItem.vue";
 
 const TaskListView = {
   path: "/",
-  name: "NowPlaying",
+  name: "TaskList",
   component: TaskList,
 };
 
-const routes = [TaskListView];
+const TaskItemView = {
+  path: "/item",
+  name: "TaskItem",
+  component: ListItem,
+};
+
+const routes = [TaskListView, ListItem];
 
 // const Routes = {
 //   folder: folder.name,
@@ -34,7 +41,7 @@ const routes = [TaskListView];
 
 const router = createRouter({
   mode: "hash",
-  history: createWebHashHistory(),
+  history: createWebHistory(),
   routes,
 });
 

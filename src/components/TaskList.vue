@@ -2,9 +2,12 @@
 import { reactive } from "vue";
 import Task from "./Task.vue";
 
-const tasks = reactive({ taskList: ["do this", "do that"] });
-
-console.log(tasks);
+const tasks = reactive({
+  taskList: [
+    { id: 1, task: "do this" },
+    { id: 2, task: "do this" },
+  ],
+});
 
 const markTaskDone = (task) => {
   tasks.taskList = tasks.taskList.filter((t) => t !== task);
