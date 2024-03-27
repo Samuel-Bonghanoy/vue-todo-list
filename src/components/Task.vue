@@ -1,5 +1,8 @@
 <script setup>
 import { CheckCircleIcon } from "@heroicons/vue/24/solid";
+import router from "../router";
+
+const directToTaskView = (id) => router.push(`/task/${id}`);
 
 defineProps({
   task: String,
@@ -11,6 +14,7 @@ defineProps({
 
 <template>
   <div
+    @click="directToTaskView(task.id)"
     class="flex text-slate-800 bg-slate-300 items-center my-2 px-3 py-3 w-full hover:bg-slate-400 hover:scale-[1.03] hover:shadow-slate-400 transition-all rounded-md"
   >
     <button

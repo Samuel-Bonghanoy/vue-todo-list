@@ -10,12 +10,12 @@ const TaskListView = {
 };
 
 const TaskItemView = {
-  path: "/item",
+  path: "/task/:id",
   name: "TaskItem",
   component: ListItem,
 };
 
-const routes = [TaskListView, ListItem];
+const routes = [TaskListView, TaskItemView];
 
 // const Routes = {
 //   folder: folder.name,
