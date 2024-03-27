@@ -5,7 +5,7 @@ export const useTasksStore = defineStore("tasks", {
     return {
       taskList: [
         { id: 1, task: "do this" },
-        { id: 2, task: "do this" },
+        { id: 2, task: "do that" },
       ],
     };
   },
@@ -13,10 +13,12 @@ export const useTasksStore = defineStore("tasks", {
   actions: {
     markAsDone(task) {
       this.taskList = this.taskList.filter((t) => t !== task);
-      console.log(this);
     },
     findTaskById(id) {
-      return this.taskList.find((el) => el.id === id);
+      const task = this.taskList.find((el) => el.id === parseInt(id));
+      console.log(id, typeof id);
+      console.log(task);
+      return task;
     },
   },
 });
