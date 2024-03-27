@@ -11,8 +11,12 @@ export const useTasksStore = defineStore("tasks", {
   },
 
   actions: {
-    markAsDone() {
-      this.taskList = tasks.taskList.filter((t) => t !== task);
+    markAsDone(task) {
+      this.taskList = this.taskList.filter((t) => t !== task);
+      console.log(this);
+    },
+    findTaskById(id) {
+      return this.taskList.find((el) => el.id === id);
     },
   },
 });

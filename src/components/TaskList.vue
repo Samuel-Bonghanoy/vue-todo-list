@@ -1,16 +1,19 @@
 <script setup>
 import { reactive } from "vue";
 import Task from "./Task.vue";
+import { useTasksStore } from "../stores/tasks";
 
-const tasks = reactive({
+const taskListState = reactive({
   taskList: [
     { id: 1, task: "do this" },
     { id: 2, task: "do this" },
   ],
 });
 
+const tasks = useTasksStore();
+
 const markTaskDone = (task) => {
-  tasks.taskList = tasks.taskList.filter((t) => t !== task);
+  tasks.markAsDone(task);
 };
 </script>
 
